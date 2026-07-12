@@ -1,3 +1,4 @@
+build/
 ## Ignores all Visual Studio 2015 files except the basic one.
 src/VS/*
 !src/VS/_ClearTempFiles.bat
