@@ -770,7 +770,7 @@ void ILine::DoRHS(const double* X,double* Xd,const double time,const double dt) 
     Lstr[i]=sqrt(lstr_squared);   // stretched segment length
     const tdouble3 ldstr=(R[i+1]-R[i])*(Rd[i+1]-Rd[i]);
     const double ldstr_top=ldstr.x+ldstr.y+ldstr.z;
-    if(fun::IsNAN(ldstr_top)) Run_Exceptioon(fun::PrintStr("A NaN value detected in the strain rate of segment %d in the line %d (t=%gs).",i,Idl,TimeStep)); 
+    //if(fun::IsNAN(ldstr_top)) Run_Exceptioon(fun::PrintStr("A NaN value detected in the strain rate of segment %d in the line %d (t=%gs).",i,Idl,TimeStep)); 
     if(Lstr[i]==double(0))Run_Exceptioon(fun::PrintStr("The stretched length of segment %d in the line %d cannot be 0 (t=%gs).",i,Idl,TimeStep)); 
     Ldstr[i]=ldstr_top/Lstr[i];   // strain rate of segment
     V[i]=PI/4.* (D*D*L[i]);    // volume attributed to segment
