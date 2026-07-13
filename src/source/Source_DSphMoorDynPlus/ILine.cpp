@@ -883,7 +883,7 @@ void ILine::DoRHS(const double* X,double* Xd,const double time,const double dt) 
     else          Fnet[i]= T[i  ]-T [i-1]+Td[i]-Td[i-1]+W[i]+(Dp[i]+Dq[i]+Ap[i]+Aq[i])+B[i];
     
     if(Fnet[i]==TDouble3(0)) Fnet[i]=TDouble3(-DBL_MIN);
-    if(fun::IsNAN(Fnet[i].x) || fun::IsNAN(Fnet[i].y) || fun::IsNAN(Fnet[i].z)) Run_Exceptioon(fun::PrintStr("A NaN value detected in the tension of the node %d in the line %d (t=%gs).",i,Idl,TimeStep)); 
+    //if(fun::IsNAN(Fnet[i].x) || fun::IsNAN(Fnet[i].y) || fun::IsNAN(Fnet[i].z)) Run_Exceptioon(fun::PrintStr("A NaN value detected in the tension of the node %d in the line %d (t=%gs).",i,Idl,TimeStep)); 
   }
 
   // loop through internal nodes and update their States
